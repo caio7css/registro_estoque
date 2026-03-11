@@ -13,7 +13,7 @@ typedef struct{
   float preco;
 } produto;
 
-typedef structNo{
+typedef struct No{
   produto No;
   struct No* proximo;
 }No;
@@ -35,7 +35,7 @@ int main(void){
     printf("7. Relatóriovde Valor Total Guardado\n");
     printf("0. Salvar e Sair\n"); 
     printf("Digite sua opção: ");
-    scanf("%d", &opcao");
+    scanf("%d", &opcao);
     //função de limpar buffer
 
 
