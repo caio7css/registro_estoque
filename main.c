@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
-#include <stlib.h>
+#include <stdlib.h>
 #include "minhalib.h"
 
 
