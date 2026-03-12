@@ -5,21 +5,15 @@
 #include "minhalib.h"
 
 
-
-typedef struct{
-  int codigo;
-  int nome[50];
-  int qtd;
-  float preco;
-} produto;
-
-typedef struct No{
-  produto No;
-  struct No* proximo;
-}No;
-
-
 int main(void){
+  setlocale(LC_ALL, "Portuguese");
+  No* estoque = NULL;
+  int opcao;
+  char nomeArquivo[]= "estoque.txt";
+
+  //carregarDoArquivo(&estoque, nomeArquivo)
+  
+
   int opcao;
 // é um crud, tem que ter função de adicionar, listar, buscar, editar, remover, relatorios sobre preço e quantidade
   do{
@@ -40,16 +34,20 @@ int main(void){
 
 
     switch(opcao){
-      case 1: //chama funcao daqui; break;
-      case 2: //chama funcao daqui; break;
-      case 3: //chama funcao daqui; break;
-      case 4: //chama funcao daqui; break;
-      case 5: //chama funcao daqui; break;
-      case 6: //chama funcao daqui; break;
-      case 7: //chama funcao daqui; break;
-      case 0: //chama funcao daqui; break;
+      case 1: adicionarProduto(&estoque); break;
+      case 2: listarProdutos(&estoque); break;
+      case 3: buscarProduto(&estoque); break;
+      case 4: editarProduto(&estoque); break;
+      case 5: removerProduto(&estoque); break;
+      case 6: 
+        // printf("Digite um quantidade limite para que você seja alertado (ex: 5): ");
+        // int limite;
+        // scanf("%d", &limite); adicionar isso a função principal 
+        verificarEstoqueBaixo(&estoque, limite); break;
+      case 7: exibirValorTotal(&estoque); break;
+      case 0: salvarEmArquivo(&estoque, nomeArquivo); break;
+        printf("Dados salvos, saindo do programa...");
       default: printf("Opção Inválida moral, por favor selecione uma opção válida\n");
-      
       
       }
 
