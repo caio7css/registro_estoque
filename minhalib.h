@@ -2,17 +2,17 @@
 // #define MINHALIB_H
 
 // No* criarProduto(Produto p);
-// void adicionarProduto(No* cabeca);
-// void listarProdutos(No* cabeca);
-// void buscarProduto(No* cabeca);
-// void editarProduto(No* cabeca);
-// void removerProduto(No** cabeca);
-// void verificarEstoqueBaixo(No* cabeca, int limite);
-// void salvarEmArquivo(No* cabeca, const char* nomeArquivo);
-// void carregarDoArquivo(No* cabeca, const char* nomeArquivo);
-// void liberarLista(No** cabeca); TALVEZ
-// void exibirValorTotal(No* cabeca);
-// void existeCodigo(No* cabeca, int codigo);
+// void adicionarProduto(No* ptrInicial);
+// void listarProdutos(No* ptrInicial);
+// void buscarProduto(No* ptrInicial);
+// void editarProduto(No* ptrInicial);
+// void removerProduto(No** ptrInicial);
+// void verificarEstoqueBaixo(No* ptrInicial, int limite);
+// void salvarEmArquivo(No* ptrInicial, const char* nomeArquivo);
+// void carregarDoArquivo(No* ptrInicial, const char* nomeArquivo);
+// void liberarLista(No** ptrInicial); TALVEZ
+// void exibirValorTotal(No* ptrInicial);
+// void existeCodigo(No* ptrInicial, int codigo);
 // void limparBuffer();
 
 // #endif
