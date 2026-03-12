@@ -48,9 +48,9 @@ Durante o desenvolvimento foram utilizados conceitos importantes da programaçã
 
 - Estruturas (struct)
 - Funções
-- Manipulação de vetores
+- Manipulação de arquivos
 - Estruturas de decisão (if, switch)
-- Estruturas de repetição (while, for)
+- Estruturas de repetição (while, for, do while)
 - Modularização do código
 
 ## 👨‍💻 Autores
