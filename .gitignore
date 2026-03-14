@@ -1,0 +1,21 @@
+# executáveis
+*.exe
+*.out
+*.app
+
+# arquivos objeto
+*.o
+*.obj
+
+# pastas de build
+output/
+build/
+bin/
+
+# arquivos temporários
+*.log
+*.tmp
+
+# arquivos do sistema
+.DS_Store
+Thumbs.db

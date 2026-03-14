@@ -9,12 +9,8 @@ int main(void){
   setlocale(LC_ALL, "Portuguese");
   No* estoque = NULL;
   int opcao;
-  char nomeArquivo[]= "estoque.txt";
-
-  //carregarDoArquivo(&estoque, nomeArquivo)
+  char nomeArquivo[]= "estoque.txt"; //carregarDoArquivo(&estoque, nomeArquivo)
   
-
-  int opcao;
 // é um crud, tem que ter função de adicionar, listar, buscar, editar, remover, relatorios sobre preço e quantidade
   do{
     printf("\n====================================\n");
@@ -26,7 +22,7 @@ int main(void){
     printf("4. Editar Produto\n");
     printf("5. Remover Produto\n");
     printf("6. Relatório de Estoque Baixo\n");
-    printf("7. Relatóriovde Valor Total Guardado\n");
+    printf("7. Relatório de Valor Total Guardado\n");
     printf("0. Salvar e Sair\n"); 
     printf("Digite sua opção: ");
     scanf("%d", &opcao);
@@ -35,19 +31,15 @@ int main(void){
 
     switch(opcao){
       case 1: adicionarProduto(&estoque); break;
-      case 2: listarProdutos(&estoque); break;
-      case 3: buscarProduto(&estoque); break;
-      case 4: editarProduto(&estoque); break;
+      case 2: listarProdutos(estoque); break;
+      case 3: buscarProduto(estoque); break;
+      case 4: editarProduto(estoque); break;
       case 5: removerProduto(&estoque); break;
-      case 6: 
-        // printf("Digite um quantidade limite para que você seja alertado (ex: 5): ");
-        // int limite;
-        // scanf("%d", &limite); adicionar isso a função principal 
-        verificarEstoqueBaixo(&estoque, limite); break;
-      case 7: exibirValorTotal(&estoque); break;
-      case 0: salvarEmArquivo(&estoque, nomeArquivo); break;
+      case 6: verificarEstoqueBaixo(estoque); break;
+      case 7: exibirValorTotal(estoque); break;
+      case 0: salvarEmArquivo(estoque, nomeArquivo); break;
         printf("Dados salvos, saindo do programa...");
-      default: printf("Opção Inválida moral, por favor selecione uma opção válida\n");
+      default: printf("Opção Inválida, por favor selecione uma opção válida\n");
       
       }
 

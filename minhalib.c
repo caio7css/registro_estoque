@@ -105,13 +105,14 @@ void carregarDoArquivo(No** ptrInicial, const char*nomeArquivo){
 
 
 void liberarLista(No** ptrInicial){
-    No* ptrAtual = ptrInicial;
+    No* ptrAtual = *ptrInicial;
     No* ptrProximo;
     while(ptrAtual != NULL){
         ptrProximo = ptrAtual->proximo;
         free(ptrAtual);
         ptrAtual = ptrProximo;
     }
+    *
     ptrInicial = NULL;
 }
 
@@ -228,7 +229,10 @@ void removerProduto(No** ptrInicial){
     printf("Produto removido.\n");
 }
 
-void verificarEstoqueBaixo(No* ptrInicial, int limite){
+void verificarEstoqueBaixo(No* ptrInicial){
+    printf("Digite um quantidade limite para que você seja alertado (ex: 5): ");
+    int limite;
+    scanf("%d", &limite);
 
     No* ptrAtual = ptrInicial;
 
