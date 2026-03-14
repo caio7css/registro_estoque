@@ -239,7 +239,7 @@ void verificarEstoqueBaixo(No* ptrInicial){
     printf("Produto com estoque baixo:\n");
     while(ptrAtual != NULL){
 
-        if(ptrAtual->dados.qtd < limite){
+        if(ptrAtual->dados.qtd <= limite){
 
             printf("%s - %d unidades\n",
                    ptrAtual->dados.nome,
