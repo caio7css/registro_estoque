@@ -26,6 +26,7 @@ int main(void){
     printf("0. Salvar e Sair\n"); 
     printf("Digite sua opção: ");
     scanf("%d", &opcao);
+    printf("\n");
     //função de limpar buffer
 
 
