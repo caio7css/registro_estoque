@@ -9,12 +9,13 @@ int main(void){
   setlocale(LC_ALL, "Portuguese");
   No* estoque = NULL;
   int opcao;
-  char nomeArquivo[]= "estoque.txt"; //carregarDoArquivo(&estoque, nomeArquivo)
+  char nomeArquivo[]= "estoque.txt"; 
+  carregarDoArquivo(&estoque, nomeArquivo);
   
 // é um crud, tem que ter função de adicionar, listar, buscar, editar, remover, relatorios sobre preço e quantidade
   do{
     printf("\n====================================\n");
-    printf("SISTEMA ESTOQUE MIZERA'S MARKETPLACE\n");
+    printf("SISTEMA ESTOQUE MZR'S MARKETPLACE\n");
     printf("====================================\n");
     printf("1. Adicionar Produto\n");
     printf("2. Listar Todos os Produtos\n");
@@ -48,6 +49,3 @@ int main(void){
   }while(opcao !=0);
     
 }
-
-
-
