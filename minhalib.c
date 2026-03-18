@@ -1,8 +1,12 @@
+//Esse arquivo serve para implementação da lista encadeada e tambbém para definição das funções
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "minhalib.h"
 
+
+// essa função 
 No* criarNo(Produto p){
     No* novo = (No*) malloc(sizeof(No));
     if (novo){
@@ -60,6 +64,7 @@ void adicionarProduto(No** ptrInicial){
 
 }
 
+// essa fimção acessa  cada elemento da lista e exibe suas informações até chegar ao último
 void listarProdutos(No* ptrInicial){
     
     No* ptrAtual = ptrInicial;
@@ -81,12 +86,8 @@ void listarProdutos(No* ptrInicial){
     }
 }
 
+// essa função pede para voce digitar o código e vai procurar item a item se o código que você digitou é igual ao do item procurado
 void buscarProduto(No* ptrInicial){
-
-     if(ptrInicial == NULL){
-        printf("Lista vazia.\n");
-        return;
-    }
 
     int codigo;
 
@@ -113,13 +114,9 @@ void buscarProduto(No* ptrInicial){
     printf("Produto nao encontrado.\n");
 }
 
+// essa função procura ptoduto pelo código e pede para vocÊ trocar as informações
 void editarProduto(No* ptrInicial){
 
-     if(ptrInicial == NULL){
-        printf("Lista vazia.\n");
-        return;
-    }
-    
     int codigo;
     
     printf("Codigo do produto: ");
@@ -152,13 +149,10 @@ void editarProduto(No* ptrInicial){
     printf("Produto nao encontrado.\n");
 }
 
+
+//essa função procura o elemento pelo código e remove ele da memória
 void removerProduto(No** ptrInicial){
     
-    if(*ptrInicial == NULL){
-        printf("Lista vazia.\n");
-        return;
-    }
-
     int codigo;
     
     printf("Codigo para remover: ");
@@ -190,6 +184,7 @@ void removerProduto(No** ptrInicial){
     printf("Produto removido.\n");
 }
 
+//a função pede pra vc dizer uma qtd de alarme e avisa se algum item tiver com a qtd igual ou abaixo do valor que voce disse
 void verificarEstoqueBaixo(No* ptrInicial){
     printf("Digite um quantidade limite para que você seja alertado (ex: 5): ");
     int limite;
@@ -210,7 +205,8 @@ void verificarEstoqueBaixo(No* ptrInicial){
         ptrAtual = ptrAtual->proximo;
     }
 }
-    
+
+//basicamente aqui acessa o arquivo  e com o elemento da struct escreve o dado selecionado por -> no arquivo
 void salvarEmArquivo(No* ptrInicial, const char* nomeArquivo){
         
     FILE* arquivo;
@@ -238,7 +234,7 @@ void salvarEmArquivo(No* ptrInicial, const char* nomeArquivo){
         fclose(arquivo);
             
 }
-    
+// Limpa a lista atual e reconstrói a estrutura em memória a partir dos dados lidos de um arquivo de texto.
 void carregarDoArquivo(No** ptrInicial, const char* nomeArquivo){
         
     liberarLista(ptrInicial); // limpa antes de carregar
@@ -262,6 +258,8 @@ void carregarDoArquivo(No** ptrInicial, const char* nomeArquivo){
     }
 }
 
+
+//essa função esvazia a lista, percore nó a nó e dá um free no espaço de memória dele
 void liberarLista(No** ptrInicial){
     No* ptrAtual = *ptrInicial;
     No* ptrProximo;
@@ -274,6 +272,8 @@ void liberarLista(No** ptrInicial){
     *ptrInicial = NULL;
 }
 
+
+// essa função retorna o somatório dos preços dos produtos adicionados
 void exibirValorTotal(No* ptrInicial){
     float total = 0;
     No* ptrAtual = ptrInicial;
@@ -284,6 +284,8 @@ void exibirValorTotal(No* ptrInicial){
     printf("\n O valor total em estoque de mercadorias é: R$: %.2f\n",total);
 }
 
+
+// essa função verifica se o código do elemento digitado já está inserido na lista, olhando todos os itens
 int jaExiste(No* ptrInicial, int codigo){
     No* atual = ptrInicial;
     while(atual!=NULL){
@@ -295,6 +297,8 @@ int jaExiste(No* ptrInicial, int codigo){
     return 0;
 }
 
+
+// essa função evita dar bronca em enviar entradas vazias
 void limparBuffer(){
     int c;
     while((c =getchar()) != '\n' &&  c != EOF);
