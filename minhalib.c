@@ -83,6 +83,11 @@ void listarProdutos(No* ptrInicial){
 
 void buscarProduto(No* ptrInicial){
 
+     if(ptrInicial == NULL){
+        printf("Lista vazia.\n");
+        return;
+    }
+
     int codigo;
 
     printf("Digite o codigo: ");
@@ -110,6 +115,11 @@ void buscarProduto(No* ptrInicial){
 
 void editarProduto(No* ptrInicial){
 
+     if(ptrInicial == NULL){
+        printf("Lista vazia.\n");
+        return;
+    }
+    
     int codigo;
     
     printf("Codigo do produto: ");
@@ -148,7 +158,7 @@ void removerProduto(No** ptrInicial){
         printf("Lista vazia.\n");
         return;
     }
-    
+
     int codigo;
     
     printf("Codigo para remover: ");
