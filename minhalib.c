@@ -144,6 +144,11 @@ void editarProduto(No* ptrInicial){
 
 void removerProduto(No** ptrInicial){
     
+    if(*ptrInicial == NULL){
+        printf("Lista vazia.\n");
+        return;
+    }
+    
     int codigo;
     
     printf("Codigo para remover: ");
