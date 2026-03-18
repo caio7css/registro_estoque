@@ -1,3 +1,5 @@
+// Este arquivo tem a Main que serve só pra chamar as funções e fazer funcionar
+
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
@@ -6,13 +8,14 @@
 
 
 int main(void){
+// definindo a região para as entradas, para aceitar ç e tals
   setlocale(LC_ALL, "Portuguese");
   No* estoque = NULL;
   int opcao;
   char nomeArquivo[]= "estoque.txt"; 
   carregarDoArquivo(&estoque, nomeArquivo);
   
-// é um crud, tem que ter função de adicionar, listar, buscar, editar, remover, relatorios sobre preço e quantidade
+// menuzinho básico
   do{
     printf("\n====================================\n");
     printf("SISTEMA ESTOQUE MZR'S MARKETPLACE\n");
@@ -28,9 +31,7 @@ int main(void){
     printf("Digite sua opção: ");
     scanf("%d", &opcao);
     printf("\n");
-    //função de limpar buffer
-
-
+    limparBuffer();
     switch(opcao){
       case 1: adicionarProduto(&estoque);  break;
       case 2: listarProdutos(estoque); break;
