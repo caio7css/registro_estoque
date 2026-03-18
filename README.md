@@ -1,9 +1,9 @@
 # 📦 Sistema de Controle de Estoque em C
 
 ## 📌 Sobre o Projeto
-Este projeto consiste no desenvolvimento de um sistema de controle de estoque utilizando a linguagem de programação C. O objetivo é permitir o gerenciamento básico de produtos, possibilitando operações como cadastro, consulta, atualização e remoção de itens do estoque.
+Bem vindo ao Mizera's Marketplace! Este é o sistema de registro e controle de estoque do mercado. O sistema é todo feito em Linguagem C, feito com o intuito de praticar estruturas de dados básicas, lógica e organização de projeto.
 
-O sistema foi desenvolvido com foco em praticar conceitos fundamentais de programação estruturada, como uso de estruturas (struct), vetores, funções e manipulação de dados.
+O sistema baseia-se numa estrutura básica de um CRUD, com algumas funções a mais para se adequar a situação criada.
 
 ## 🎯 Funcionalidades
 O sistema permite realizar as seguintes operações:
@@ -22,24 +22,18 @@ Cada produto contém informações como:
 - Quantidade em estoque
 - Preço
 
-## 🛠 Tecnologias Utilizadas
-
-- Linguagem C
-- Compilador GCC
-- Execução em terminal/console
-
 ## 📂 Estrutura do Projeto
 
 controle-estoque-c/
 │
 ├── main.c
-├── estoque.h
-├── estoque.c
+├── minhalib.h
+├── minhalib.c
 └── README.md
 
 - main.c → Arquivo principal do programa  
-- estoque.h → Definições de estruturas e protótipos das funções  
-- estoque.c → Implementação das funções de controle de estoque  
+- minhalib.h → Definições de estruturas e protótipos das funções  
+- minhalib.c → Implementação das funções de controle de estoque  
 
 
 ## 📚 Conceitos de Programação Aplicados
