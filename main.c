@@ -32,20 +32,21 @@ int main(void){
 
 
     switch(opcao){
-      case 1: adicionarProduto(&estoque); break;
+      case 1: adicionarProduto(&estoque);  break;
       case 2: listarProdutos(estoque); break;
       case 3: buscarProduto(estoque); break;
       case 4: editarProduto(estoque); break;
       case 5: removerProduto(&estoque); break;
       case 6: verificarEstoqueBaixo(estoque); break;
       case 7: exibirValorTotal(estoque); break;
-      case 0: salvarEmArquivo(estoque, nomeArquivo); break;
-        printf("Dados salvos, saindo do programa...");
+      case 0: salvarEmArquivo(estoque, nomeArquivo); 
+        printf("Dados salvos, saindo do programa..."); break;
       default: printf("Opção Inválida, por favor selecione uma opção válida\n");
       
       }
 
       
   }while(opcao !=0);
-    
+
+  liberarLista(&estoque);
 }

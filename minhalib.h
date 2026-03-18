@@ -1,5 +1,6 @@
 #ifndef MINHALIB_H
 #define MINHALIB_H
+
 typedef struct{
   int codigo;
   char nome[50];
@@ -14,6 +15,7 @@ typedef struct No{
 
 
 No* criarNo(Produto p);
+void inserirOrdenado(No** ptrInicial, Produto p);
 void adicionarProduto(No** ptrInicial);
 void listarProdutos(No* ptrInicial);
 void buscarProduto(No* ptrInicial);

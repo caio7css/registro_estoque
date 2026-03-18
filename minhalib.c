@@ -12,6 +12,28 @@ No* criarNo(Produto p){
     return novo;
 }
 
+void inserirOrdenado(No** ptrInicial, Produto p){
+    No* ptrNovo = criarNo(p);
+    if(ptrNovo == NULL) return;
+
+    No* ptrAnterior = NULL;
+    No* ptrAtual = *ptrInicial;
+
+    while(ptrAtual != NULL && p.codigo > ptrAtual->dados.codigo){
+        ptrAnterior = ptrAtual;
+        ptrAtual = ptrAtual->proximo;
+    }
+
+    if(ptrAnterior == NULL){
+        ptrNovo->proximo = *ptrInicial;
+        *ptrInicial = ptrNovo;
+    }
+    else{
+        ptrAnterior->proximo = ptrNovo;
+        ptrNovo->proximo = ptrAtual;
+    }
+}
+
 void adicionarProduto(No** ptrInicial){
     Produto p;
     printf("\n--- Novo Produto ---\n");
@@ -34,28 +56,7 @@ void adicionarProduto(No** ptrInicial){
     printf("Preço Unitário: ");
     scanf("%f", &p.preco);
 
-    No* prtNovo = criarNo(p);
-    if(prtNovo != NULL){
-        prtNovo->dados = p;
-        prtNovo->proximo = NULL;
-
-        No* ptrAnterior = NULL;
-        No* ptrAtual = *ptrInicial;
-
-        while(ptrAtual != NULL && p.codigo > ptrAtual->dados.codigo){
-            ptrAnterior = ptrAtual;
-            ptrAtual = ptrAtual->proximo;
-        }
-        
-        if(ptrAnterior == NULL){
-            prtNovo->proximo = *ptrInicial;
-            *ptrInicial = prtNovo;
-        }
-        else{
-            ptrAnterior->proximo = prtNovo;
-            prtNovo->proximo = ptrAtual;
-        }
-    }
+    inserirOrdenado(ptrInicial, p);
 
 }
 
@@ -121,7 +122,9 @@ void editarProduto(No* ptrInicial){
         if(ptrAtual->dados.codigo == codigo){
             
             printf("Novo nome: ");
-            scanf("%s", ptrAtual->dados.nome);
+            limparBuffer();
+            fgets(ptrAtual->dados.nome, 50, stdin);
+            ptrAtual->dados.nome[strcspn(ptrAtual->dados.nome, "\n")] = 0;
             
             printf("Nova quantidade: ");
             scanf("%d",&ptrAtual->dados.qtd);
@@ -184,7 +187,7 @@ void verificarEstoqueBaixo(No* ptrInicial){
         
         if(ptrAtual->dados.qtd <= limite){
             
-            printf("%s - %d unidades\n",
+            printf("%s:  %d unidades\n",
                 ptrAtual->dados.nome,
                 ptrAtual->dados.qtd);
             }
@@ -219,8 +222,7 @@ void salvarEmArquivo(No* ptrInicial, const char* nomeArquivo){
             
         fclose(arquivo);
             
-        printf("Dados salvos.\n");
-    }
+}
     
 void carregarDoArquivo(No** ptrInicial, const char* nomeArquivo){
         
@@ -234,27 +236,7 @@ void carregarDoArquivo(No** ptrInicial, const char* nomeArquivo){
         while (fscanf(arq, "%d;%[^;];%d;%f\n",
             &p.codigo, p.nome, &p.qtd, &p.preco) == 4) {
     
-                No* ptrNovo = criarNo(p);
-    
-            if(ptrNovo == NULL) continue;
-            
-            No* ptrAnterior = NULL;
-            No* ptrAtual = *ptrInicial;
-            
-            //INSERÇÃO ORDENADA (igual ao adicionar)
-            while(ptrAtual != NULL && p.codigo > ptrAtual->dados.codigo){
-                ptrAnterior = ptrAtual;
-                ptrAtual = ptrAtual->proximo;
-            }
-            
-            if(ptrAnterior == NULL){
-                ptrNovo->proximo = *ptrInicial;
-                *ptrInicial = ptrNovo;
-            }
-            else{
-                ptrAnterior->proximo = ptrNovo;
-                ptrNovo->proximo = ptrAtual;
-            }
+            inserirOrdenado(ptrInicial, p);
         }
         
         fclose(arq);
