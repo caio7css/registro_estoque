@@ -1,7 +1,7 @@
 # 📦 Sistema de Controle de Estoque em C
 
 ## 📌 Sobre o Projeto
-Bem vindo ao Mizera's Marketplace! Este é o sistema de registro e controle de estoque do mercado. O sistema é todo feito em Linguagem C, feito com o intuito de praticar estruturas de dados básicas, lógica e organização de projeto.
+Bem vindo ao Mzr's Marketplace! Este é o sistema de registro e controle de estoque do mercado. O sistema é todo feito em Linguagem C, feito com o intuito de praticar estruturas de dados básicas, lógica e organização de projeto.
 
 O sistema baseia-se numa estrutura básica de um CRUD, com algumas funções a mais para se adequar a situação criada.
 

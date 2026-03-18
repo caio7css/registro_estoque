@@ -6,7 +6,7 @@
 #include "minhalib.h"
 
 
-// essa função 
+// essa função cria um novo nó e aloca memória
 No* criarNo(Produto p){
     No* novo = (No*) malloc(sizeof(No));
     if (novo){
@@ -16,6 +16,7 @@ No* criarNo(Produto p){
     return novo;
 }
 
+//essa função insere o produto em ordem crescente do código 
 void inserirOrdenado(No** ptrInicial, Produto p){
     No* ptrNovo = criarNo(p);
     if(ptrNovo == NULL) return;
@@ -38,6 +39,7 @@ void inserirOrdenado(No** ptrInicial, Produto p){
     }
 }
 
+//essa função adiciona um novo produto a lista encadeada 
 void adicionarProduto(No** ptrInicial){
     Produto p;
     printf("\n--- Novo Produto ---\n");
@@ -64,7 +66,7 @@ void adicionarProduto(No** ptrInicial){
 
 }
 
-// essa fimção acessa  cada elemento da lista e exibe suas informações até chegar ao último
+// essa função acessa cada elemento da lista e exibe suas informações até chegar ao último
 void listarProdutos(No* ptrInicial){
     
     No* ptrAtual = ptrInicial;
@@ -89,6 +91,10 @@ void listarProdutos(No* ptrInicial){
 // essa função pede para voce digitar o código e vai procurar item a item se o código que você digitou é igual ao do item procurado
 void buscarProduto(No* ptrInicial){
 
+    if(ptrInicial == NULL){
+    printf("Lista vazia.\n");
+    return;
+    }
     int codigo;
 
     printf("Digite o codigo: ");
@@ -114,8 +120,13 @@ void buscarProduto(No* ptrInicial){
     printf("Produto nao encontrado.\n");
 }
 
-// essa função procura ptoduto pelo código e pede para vocÊ trocar as informações
+// essa função procura produto pelo código e pede para você trocar as informações
 void editarProduto(No* ptrInicial){
+
+    if(ptrInicial == NULL){
+    printf("Lista vazia.\n");
+    return;
+    }
 
     int codigo;
     
@@ -153,6 +164,10 @@ void editarProduto(No* ptrInicial){
 //essa função procura o elemento pelo código e remove ele da memória
 void removerProduto(No** ptrInicial){
     
+    if(*ptrInicial == NULL){
+    printf("Lista vazia.\n");
+    return;
+    }
     int codigo;
     
     printf("Codigo para remover: ");
@@ -298,7 +313,7 @@ int jaExiste(No* ptrInicial, int codigo){
 }
 
 
-// essa função evita dar bronca em enviar entradas vazias
+// essa função evita dar erro em enviar entradas vazias
 void limparBuffer(){
     int c;
     while((c =getchar()) != '\n' &&  c != EOF);

@@ -1,4 +1,4 @@
-//esse arqiovo tem função de definir as estruturas e inicializar as  funções que serão utilizadas
+//esse arquivo tem função de definir as estruturas e inicializar as  funções que serão utilizadas
 
 #ifndef MINHALIB_H
 #define MINHALIB_H
