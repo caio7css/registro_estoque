@@ -206,18 +206,29 @@ void verificarEstoqueBaixo(No* ptrInicial){
     scanf("%d", &limite);
     
     No* ptrAtual = ptrInicial;
+    int encontrou = 0; // variável de controle
     
-    printf("Produto com estoque baixo:\n");
     while(ptrAtual != NULL){
         
         if(ptrAtual->dados.qtd <= limite){
             
-            printf("%s:  %d unidades\n",
+            if(encontrou == 0){ //se for o primeiro encontrado
+                printf("Produto com estoque baixo:\n");
+            }
+
+            printf("%s: %d unidades\n",
                 ptrAtual->dados.nome,
                 ptrAtual->dados.qtd);
-            }
+                
+            encontrou = 1; // marcou que encontrou pelo menos um
+        }
             
         ptrAtual = ptrAtual->proximo;
+    }
+
+    
+    if(encontrou == 0){
+        printf("Nao ha nenhum produto com estoque baixo.\n");
     }
 }
 
