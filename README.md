@@ -75,9 +75,3 @@ Projeto desenvolvido por estudantes de Ciência da Computação – UEPB:
 * Alice Ferreira
 * Caio César
 * Sarah Oliveira
-
----
-
-## 🚧 Status
-
-Projeto em desenvolvimento
