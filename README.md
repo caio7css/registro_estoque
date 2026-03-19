@@ -32,5 +32,52 @@ Cada produto possui:
 ## 📂 Estrutura do projeto
 
 ```
-controle-
+controle-estoque-c/
+├── main.c
+├── minhalib.h
+├── minhalib.c
+└── README.md
 ```
+
+* `main.c` → arquivo principal
+* `minhalib.h` → structs e protótipos
+* `minhalib.c` → implementação das funções
+
+---
+
+## 🛠️ Compilação e execução
+
+```bash
+gcc main.c minhalib.c -o programa
+```
+
+```bash
+./programa
+```
+
+---
+
+## 📚 Conceitos aplicados
+
+* Structs
+* Funções
+* Manipulação de arquivos
+* Estruturas de decisão (`if`, `switch`)
+* Estruturas de repetição (`while`, `for`)
+* Modularização
+
+---
+
+## 👨‍💻 Autores
+
+Projeto desenvolvido por estudantes de Ciência da Computação – UEPB:
+
+* Alice Ferreira
+* Caio César
+* Sarah Oliveira
+
+---
+
+## 🚧 Status
+
+Projeto em desenvolvimento
